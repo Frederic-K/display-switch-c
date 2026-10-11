@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Version distribuée : application fenêtrée, sans console. -->
+    <OutputType>WinExe</OutputType>
+    <!-- En Debug (dotnet run) : application console, pour voir la sortie des commandes. -->
+    <OutputType Condition="'$(Configuration)' == 'Debug'">Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Nécessaire pour les tampons de texte Windows (win.cs). -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>DisplaySwitch</AssemblyName>
+    <RootNamespace>DisplaySwitch</RootNamespace>
+    <!-- Netteté sur chaque écran, même avec des mises à l'échelle différentes. -->
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationVisualStyles>true</ApplicationVisualStyles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Les tests accèdent aux fonctions internes (règles de sécurité, configuration). -->
+    <InternalsVisibleTo Include="DisplaySwitch.Tests" />
+  </ItemGroup>
+
+</Project>

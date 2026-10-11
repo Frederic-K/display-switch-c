@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DisplaySwitch/DisplaySwitch.csproj" />
+  <Project Path="DisplaySwitch.Tests/DisplaySwitch.Tests.csproj" />
+</Solution>
